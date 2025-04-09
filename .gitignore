@@ -1,0 +1,23 @@
+# Entorno virtual y dependencias
+rasa-env/
+node_modules/
+frontend/
+__pycache__/
+*.pyc
+
+# Modelos entrenados
+models/
+
+# Cache y otros
+.rasa/
+.DS_Store
+
+# Archivos grandes comunes
+*.h5
+*.pkl
+*.zip
+*.tar.gz
+*.db
+*.csv
+*.json
+

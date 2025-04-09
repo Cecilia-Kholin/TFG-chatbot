@@ -1,0 +1,14 @@
+# Ignora dependencias y archivos temporales
+node_modules/
+__pycache__/
+*.pyc
+*.pkl
+*.h5
+*.zip
+*.tar.gz
+*.csv
+*.json
+*.db
+.DS_Store
+.env
+

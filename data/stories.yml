@@ -1,0 +1,129 @@
+version: "3.1"
+#Sirve para entrenar el modelo de diálogo de Rasa con ejemplos de conversaciones, 
+#permitiendo que el chatbot aprenda a responder de manera más natural y en contexto
+stories:
+
+- story: suma
+  steps:
+  - intent: ask_sum
+  - action: action_sum
+
+- story: div
+  steps:
+  - intent: ask_div_int
+  - action: action_div
+
+- story: Respond to "Who are you?"
+  steps:
+    - intent: ask_who_are_you
+    - action: action_who_are_you
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  #- action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+  #- action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: Usuario dice algo fuera de contexto
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+   # esto puedo eliminarlo, no? 
+- story: Usuario responde a un ejercicio de división
+  steps:
+    - intent: answer_division
+    - action: action_check_division_answer
+    #- action: action_review_incorrect_divisions
+
+   #AÑADIR EXPLICACIOÓN SI LA RESPUESTA ES INCORRECTA
+
+####################################################
+############## USUARIO PIDE PRACTICAR ##############
+####################################################
+
+- story: usuario quiere practicar a divisiones sueltas
+  steps:
+    - intent: request_practice_div  #intent del nlu, pide por hacer divisiones
+    - action: utter_request_practice_div #botones de sueltas o con enunciados
+    - intent: elegir_division_sueltas    #elige sueltas 
+    - action: utter_elegir_nivel_dificultad  #botones de dificultad
+    - intent: elegir_dificultad
+      entities:
+        - dificultad: dificultad
+    - action: utter_elegir_numero_ejercicios
+    - intent: elegir_numero_ejercicios
+      entities:
+          - numero #solo necesitas indicar que la entidad numero puede estar presente en el intent. No debes listar múltiples valores en la misma historia
+    - action: action_generar_ejercicios
+    - intent: answer_division
+    - action: action_check_division_answer
+    #- action: action_review_incorrect_divisions
+
+
+- story: usuario quiere practicar divisiones con Enunciados
+  steps:
+    - intent: request_practice_div
+    - action: utter_request_practice_div #botones
+    - intent: elegir_division_enunciados
+    - action: utter_elegir_nivel_dificultad_enunciados  #botones de dificultad
+    - intent: elegir_dificultad_enunciados
+      entities:
+        - dificultad: dificultad
+    - action: utter_elegir_numero_ejercicios_enunciados
+    - intent: elegir_numero_ejercicios_enunciados
+      entities:
+          - numero
+    - action: action_generar_ejercicios
+    - intent: answer_division
+    - action: action_check_division_answer
+    #- action: action_review_incorrect_divisions
+
+##############
+
+# DESDE DE PREGUNTAR POR LOS TIPOS  DE DIVISIONES EL USUARIO ELIGE 1 ()
+- story: usuario quiere aprender a dividir
+  steps:
+    - intent: tipos_division
+    - action: utter_tipos_division
+
+- story: usuario elige división de una cifra
+  steps:
+    - intent: elegir_division_sola_cifra
+    - action: utter_division_sola_cifra
+
+- story: usuario elige división de dos cifras
+  steps:
+    - intent: elegir_division_dos_cifras
+    - action: utter_division_dos_cifras
+
+- story: usuario elige división con decimales
+  steps:
+    - intent: elegir_division_decimales
+    - action: utter_division_decimales
+
+- story: usuario elige división con residuo
+  steps:
+    - intent: elegir_division_residuo
+    - action: utter_division_residuo

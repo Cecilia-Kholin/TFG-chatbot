@@ -1,0 +1,329 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_wellbeing
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_sum
+  - ask_div_int
+  - ask_who_are_you
+  - out_of_scope
+  - agradecer
+  #- theory_div #explicar de forma TEORICA la division
+  #PREGUNTAS EJERCICIOS
+  - request_practice_div
+  - answer_division
+  - tipos_division
+  - elegir_division_sola_cifra
+  - elegir_division_dos_cifras
+  - elegir_division_decimales
+  - elegir_division_residuo
+  #
+  - elegir_division_enunciados
+  - elegir_division_sueltas
+  #-
+  - elegir_numero_ejercicios
+  - elegir_numero_ejercicios_enunciados
+  #-
+  - elegir_dificultad
+  - elegir_dificultad_enunciados
+  - reset_slot
+
+entities:
+  - number1
+  - number2
+  - num_ejercicios
+  - numero # para pedir los ejercicios
+  - dificultad
+actions:
+  - action_sum
+  - action_div
+  - action_who_are_you
+  #actions para dar ejemplos
+  - action_exercises
+  - action_check_division_answer
+  - action_generar_ejercicios
+  #- action_review_incorrect_divisions
+  - action_prueba
+  - action_enviar_correccion
+
+
+#// =====================================================
+#//                        SLOTS
+#// =====================================================
+slots:
+#verificar si es la primera vez que se genera un ejercicio.
+  first_division_request:
+    type: bool
+    initial_value: true
+    mappings:
+    - type: custom
+
+  correct_answer:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: custom
+        entity: answer_division
+  
+  # Slot para el número de ejercicios seleccionados
+  numero:
+    type: text  
+    mappings:
+      - type: from_entity
+        entity: numero
+
+  numero_ejercicios:
+    type: text
+    mappings:
+      - type: custom
+        entity: numero_ejercicios
+  # Slot para los ejercicios generados (sin mapeo personalizado)
+  ejercicios: 
+    type: any
+    mappings:
+      - type: custom
+        entity: ejercicios
+    
+  current_exercise:
+    type: any
+    mappings:
+      - type: custom
+        entity: current_exercise
+  
+  #TIPO EJERCICIO --> SUELTAS O ENUNCIADOS
+  tipo_ejercicio:
+    type: text
+    mappings:
+      - type: from_intent
+        intent: elegir_division_sueltas
+        value: "sueltas"
+      - type: from_intent
+        intent: elegir_division_enunciados
+        value: "enunciados"
+  #Dificultad EJERCICIO
+  dificultad:
+    type: categorical
+    values:
+      - fácil
+      - medio
+      - difícil
+      - experto
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: dificultad  # Obtiene el valor de la entidad "dificultad"
+
+#Se guardan las respuestas incorrectas
+  incorrect_divisions:
+    type: list
+    initial_value: []
+    influence_conversation: false
+    mappings:
+      - type: custom
+ 
+
+#// =====================================================
+#//               RESPUESTAS DEL CHATBOT
+#// =====================================================
+responses:
+# cuidado con esto, si en la acción ya tengo resouestas esto sobra. mirar mejor
+  utter_ask_sum:
+    - text: "Dime los números que quieres sumar."
+    - text: "¿Qué números deseas que sume por ti?"
+    - text: "Por favor, indícame los números que quieres sumar."
+    - text: "Estoy listo para sumar. ¿Qué números debo usar?"
+    - text: "¡Vamos a sumar! ¿Qué números quieres?"
+
+  utter_ask_div:
+  - text: "Dime los números que quieres dividir."
+  - text: "¿Qué números deseas que divida por ti?"
+  - text: "Por favor, indícame los números que quieres dividir."
+  - text: "Estoy listo para dividir. ¿Qué números debo usar?"
+  - text: "¡Vamos a dividir! ¿Cuáles son los dos números que quieres dividir?"
+
+  utter_greet:
+    - text: "¡Hola! ¿En qué te puedo ayudar hoy?"
+    - text: "¡Hola! Estoy aquí para ayudarte, ¿qué necesitas?"
+    - text: "¡Bienvenido! ¿Cómo puedo asistirte?"
+    - text: "¡Hola! ¿Qué tal tu día? Cuéntame, ¿cómo te puedo ayudar?"
+    - text: "¡Hola! Estoy listo para ayudarte. ¿Qué necesitas?"
+
+  utter_ask_wellbeing:
+    - text: "¡Genial! Ahora que has llegado, todo va mejor. ¿En qué te puedo ayudar?"
+    - text: "¡Estoy fenomenal! ¿Cómo te va a ti? ¿En qué puedo ayudarte hoy?"
+    - text: "¡Todo está bien! ¿Y tú? ¿Qué tal tu día?"
+    - text: "¡Perfecto! Ahora que estamos aquí, ¿en qué te puedo asistir?"
+    - text: "¡Todo marcha genial! ¿Y tú, cómo estás?"
+    - text: "¡Estoy de maravilla! ¿Qué tal contigo?"
+    - text: "¡Todo excelente! Ahora que estás aquí, ¿en qué te ayudo?"
+
+  utter_mood_unhappy:
+  - text: "Todos estamos tristes alguna vez, ¡no te preocupes! Es completamente normal sentirse así. Anímate, seguro que te sientes mejor pronto. Estoy aquí si necesitas hablar o hacer algo divertido."
+    image: "https://media.istockphoto.com/id/1389862392/es/foto/mano-de-mujer-acariciando-a-un-gato-de-jengibre-sobre-fondo-blanco-aislado.jpg?s=1024x1024&w=is&k=20&c=0GnKqGrGkgC2YDQbrLpnMdmwPnTYUNEBrGjbNKaSTvY="
+
+  utter_did_that_help: # MIRAR ESTO MEJOR, POR AHORA LO BORRO DE STORIES
+    - text: "¿Eso te ayudó?"
+    - text: "¿Fue útil la información?"
+    - text: "¿Te sirvió lo que te dije?"
+    - text: "¿Esto resolvió tu duda?"
+    - text: "Espero que te haya sido de ayuda, ¿es así?"
+    
+  utter_happy:
+    - text: "¡Estoy feliz de escuchar eso!"
+    - text: "¡Qué bien! 😊"
+    - text: "Me alegra saber que estás contento."
+    - text: "¡Eso es genial! ¡Sigamos así!"
+
+  utter_goodbye:
+    - text: "Adiós, ¡nos vemos pronto!"
+    - text: "Hasta luego, ¡cuídate mucho!"
+    - text: "¡Chao! Espero verte pronto."
+    - text: "Hasta la próxima, que tengas un gran día."
+    - text: "Nos vemos, ¡que todo vaya bien!"
+
+
+  utter_iamabot:
+    - text: "Soy un bot diseñado para ayudarte."
+    - text: "Así es, soy un bot, pero estoy aquí para asistirte."
+    - text: "Soy un asistente virtual creado para resolver tus dudas."
+    - text: "Correcto, soy un bot, pero puedes contar conmigo para ayudarte."
+    - text: "Sí, soy un programa de inteligencia artificial, ¿en qué te puedo ayudar?"
+
+
+  utter_result_sum:
+  - text: "La respuesta es {resultado}. ¿Te gustaría intentar otra operación?"
+
+  utter_result_difference:
+  - text: "La resta es {resultado}. ¡Buen trabajo!"
+
+  utter_out_of_scope:
+    - text: "No he entendido lo que dijiste. ¿Podrías escribirlo de otra forma?"
+    - text: "Lo siento, pero no comprendí tu mensaje. Intenta decirlo de otra manera."
+
+  utter_agradecer:
+    - text: "¡De nada! 😊"
+    - text: "No hay de qué. ¡Siempre feliz de ayudar!"
+    - text: "¡Con gusto! Si necesitas algo más, aquí estoy."
+    - text: "¡Me alegra haber sido de ayuda! 😃"
+    - text: "No hay problema, ¡pregunta lo que necesites!"
+    - text: "¡Gracias a ti por preguntar! 😊"
+    - text: "¡Para eso estoy! Si tienes más dudas, dime."
+
+  utter_fallback:
+    - text: "Lo siento, no entendí lo que dijiste. ¿Puedes reformularlo?"
+
+  #utter_theory_div:
+  #  - text: |
+  #     Una división se trata de un reparto en partes iguales.
+  #     Hay una bolsa con 10 canicas y 5 amigos. Quieren repartir las canicas de modo que todos tengan la misma cantidad de ellas. 
+  #     Uno de los amigos coge la bolsa y empieza a dar una canica a cada uno y sí mismo hasta que se acaban. Cuando finaliza el reparto, cada uno de los amigos ha conseguido 2 canicas. De esto podemos deducir que 10 canicas divididas entre 5 amigos es igual a que cada amigo tenga dos canicas.
+  #    image: "https://www.pequeocio.com/wp-content/uploads/2019/01/partes-de-la-division.jpg"
+
+#// =====================================================
+#//              BOTONES TIPOS DE DIVISIONES
+#// =====================================================
+  utter_tipos_division:
+    - text: "¿Qué tipo de división te gustaría aprender?\n\n"
+      buttons:
+      - title: "División de una cifra"
+        payload: "/elegir_division_sola_cifra" #poner aqui el intent
+      - title: "División de dos cifras"
+        payload: "/elegir_division_dos_cifras"
+      - title: "División con decimales"
+        payload: "/elegir_division_decimales"
+      - title: "División con residuo"
+        payload: "/elegir_division_residuo"
+
+  utter_division_sola_cifra:
+    - text: "¡Mira qué divertido! Hay 10 caramelos 🍬 y los dos niños los están repartiendo para que a cada uno le toque lo mismo.
+        Eso es dividir. 😊 Al final, cada uno recibe 5 caramelos, porque 10 dividido entre 2 es igual a 5."
+      image: "http://localhost:3000/1.gif"
+
+  utter_division_dos_cifras:
+    - text: "En las divisiones de dos cifras, el divisor tiene dos números. Ejemplo: 144 ÷ 12 = 12."
+
+  utter_division_decimales:
+    - text: |
+       🔹 Divide como siempre.
+       🔹 Si sobra algo, añade una coma.
+       🔹 Pon un 0 al resto y sigue dividiendo.
+       🔹 ¡Ya estás trabajando con decimales!
+      image: "http://localhost:3000/decimales.gif"
+
+  utter_division_residuo:
+    - text: |
+        A veces, cuando dividimos, nos sobra algo.
+        Si queremos saber exactamente cuánto le toca a cada uno, usamos decimales.
+        Pero si solo queremos saber cuántas veces cabe un número sin fijarnos en los trozos pequeños, dejamos el residuo.
+
+        Si tienes 7 caramelos para 2 amigos, puedes darles 3 a cada uno y te sobra 1.
+        Como no puedes partir caramelos, decimos: 7 ÷ 2 = 3 y sobra 1
+      image: "http://localhost:3000/residuo.gif"
+#// =====================================================
+#//              BOTONES TIPOS EJERCICIOS
+#// =====================================================
+  utter_request_practice_div:
+    - text: "¿Como quieres practicar las divisiones?\n\n"
+      buttons:
+      - title: "División con enunciados"
+        payload: "/elegir_division_enunciados" #poner aqui el intent
+      - title: "División sueltas"
+        payload: "/elegir_division_sueltas"
+
+  utter_elegir_numero_ejercicios_enunciados:
+    - text: "¿Cuántos ejercicios con enunciados quieres practicar📝?"
+      buttons:
+        - title: "2 enunciados"
+          payload: /elegir_numero_ejercicios_enunciados{{"numero":"2"}}
+        - title: "4 enunciados"
+          payload: /elegir_numero_ejercicios_enunciados{{"numero":"4"}}
+        - title: "6 enunciados"
+          payload: /elegir_numero_ejercicios_enunciados{{"numero":"6"}}
+        - title: "10 enunciados"
+          payload: /elegir_numero_ejercicios_enunciados{{"numero":"10"}}
+
+  utter_elegir_numero_ejercicios:
+    - text: "¿Cuántos ejercicios quieres practicar?"
+      buttons:
+        - title: "2 ejercicios"
+          payload: /elegir_numero_ejercicios{{"numero":"2"}}
+        - title: "4 ejercicios"
+          payload: /elegir_numero_ejercicios{{"numero":"4"}}
+        - title: "6 ejercicios"
+          payload: /elegir_numero_ejercicios{{"numero":"6"}}
+        - title: "10 ejercicios"
+          payload: /elegir_numero_ejercicios{{"numero":"10"}}
+
+  utter_elegir_nivel_dificultad:
+     - text: "Nivel de dificultad"
+       buttons:
+        - title: "Fácil"
+          payload: /elegir_dificultad{{"dificultad":"fácil"}}
+        - title: "Medio"
+          payload: /elegir_dificultad{{"dificultad":"medio"}}
+        - title: "Difícil-residuos"
+          payload: /elegir_dificultad{{"dificultad":"difícil"}}
+        - title: "Experto-decimales"
+          payload: /elegir_dificultad{{"dificultad":"experto"}}
+
+  utter_elegir_nivel_dificultad_enunciados:
+     - text: "Nivel de dificultad para tus enunciados"
+       buttons:
+        - title: "Fácil"
+          payload: /elegir_dificultad_enunciados{{"dificultad":"fácil"}}
+        - title: "Medio"
+          payload: /elegir_dificultad_enunciados{{"dificultad":"medio"}}
+        - title: "Difícil"
+          payload: /elegir_dificultad_enunciados{{"dificultad":"difícil"}}
+        - title: "Experto"
+          payload: /elegir_dificultad_enunciados{{"dificultad":"experto"}}
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

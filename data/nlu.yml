@@ -1,0 +1,431 @@
+#Lo que el usuario preguntará al robot.
+version: "3.1"
+#VER ESTOOO: 
+#quiero ser super inteligente
+nlu:
+
+#// =====================================================
+#//                   PREGUNTAS DE ESTADO
+#// =====================================================
+- intent: greet
+  examples: |
+    - hola
+    - holis
+    - holiwis
+    - ¡Hola!
+    - Buenas
+    - Buenos días
+    - Buenas tardes
+    - Buenas noches
+    - Hola a todos
+    - ¡Ey!
+    - ¡Hey!
+    - ¡Hola, amigo!
+    - ¡Qué gusto saludarte!
+    - Hola, ¿qué hay de nuevo?
+    - ¡Hola, hola!
+    - Saludos
+    - Hola, aquí estoy
+    - Hola, comencemos
+    - ¡Buenas, equipo!
+    
+#le pregunta como esta 
+- intent: ask_wellbeing
+  examples: |
+    - ¿Qué tal?
+    - que tal estas
+    - ¿Cómo estás?
+    - ¿Cómo va todo?
+    - ¿Todo bien?
+    - ¿Qué tal todo?
+    - ¿Cómo te encuentras?
+    - ¿Qué hay de nuevo?
+    - ¿Qué pasa?
+    - ¿Qué cuentas?
+    - ¿Cómo va la vida?
+    - ¿Todo tranquilo?
+    - ¿Cómo te va?
+    - ¿Qué onda?
+    - ¡Qué tal todo!
+
+
+- intent: goodbye
+  examples: |
+    - Adiós
+    - Hasta luego
+    - Nos vemos
+    - Que estés bien
+    - Hasta pronto
+    - Cuídate
+    - Hasta la próxima
+    - Chao
+    - ¡Bye!
+    - Nos vemos luego
+    - Hasta mañana
+    - Que tengas un buen día
+    - Que te vaya bien
+    - ¡Hasta otra!
+    - Chau
+    - Me despido
+    - Nos vemos pronto
+    - Saludos, hasta luego
+    - ¡Adiós, cuídate!
+
+- intent: affirm
+  examples: |
+    - Sí
+    - sip
+    - sipi
+    - Claro
+    - Por supuesto
+    - Correcto
+    - Así es
+    - Eso suena bien
+    - Sin duda
+    - De acuerdo
+    - Exacto
+    - Perfecto
+    - Vale
+    - Seguro
+    - Claro que sí
+    - Obvio
+    - Desde luego
+    - Es correcto
+    - ¡Sí, seguro!
+    - Totalmente
+    - Completamente de acuerdo
+    - Ajá
+
+- intent: deny
+  examples: |
+    - No
+    - nop
+    - nope
+    - Nunca
+    - Para nada
+    - No lo creo
+    - No me gusta eso
+    - Ni pensarlo
+    - De ninguna manera
+    - No, gracias
+    - No realmente
+    - Eso no
+    - No es correcto
+    - No estoy de acuerdo
+    - No quiero
+    - Ni hablar
+    - Imposible
+    - Definitivamente no
+    - No es así
+    - No, en absoluto
+    - Claro que no
+    - Negativo
+
+
+#MIRAR. NO TENGO RESPUESTAS PARA ESTO
+- intent: mood_great
+  examples: |
+    - Perfecto
+    - Bien
+    - Genial
+    - Increíble
+    - Me siento como un rey
+    - Maravilloso
+    - Me siento muy bien
+    - Estoy genial
+    - Estoy increíble
+    - Estoy listo para salvar el mundo
+    - Súper emocionado
+    - Estoy de maravilla
+    - Estoy extremadamente bien
+    - Todo perfecto
+    - Muy bien
+    - Es un día perfecto
+    - Me siento fenomenal
+    - Todo marcha sobre ruedas
+    - Estoy feliz
+    - ¡De lujo!
+    - ¡Espectacular!
+
+
+- intent: mood_unhappy  
+  examples: |
+    - Mi día fue horrible
+    - Estoy triste
+    - No me siento muy bien
+    - Estoy decepcionado
+    - Súper triste
+    - Estoy muy triste
+    - Triste
+    - Muy triste
+    - Descontento
+    - No estoy bien
+    - No me va muy bien
+    - Extremadamente triste
+    - Estoy tan triste
+    - Estoy muy desanimado
+    - Me siento fatal
+    - Qué mal día
+    - Me siento horrible
+    - Nada está bien hoy
+    - Estoy enojado y triste
+
+- intent: bot_challenge
+  examples: |
+    - ¿Eres un bot?
+    - ¿Eres humano?
+    - ¿Estoy hablando con un bot?
+    - ¿Estoy hablando con un humano?
+    - ¿Eres una máquina?
+    - ¿Tú eres un asistente?
+    - ¿Eres inteligencia artificial?
+    - ¿Quién eres?
+    - ¿Eres real?
+    - ¿Eres una persona?
+    - ¿Qué eres exactamente?
+    - ¿Estoy conversando con una IA?
+    - ¿Tienes conciencia?
+    - ¿Puedes pensar?
+    - ¿Cómo fuiste creado?
+    - ¿Qué funciones tienes?
+    - ¿Cuál es tu propósito?
+
+- intent: agradecer
+  examples: |
+    - gracias
+    - muchas gracias
+    - te lo agradezco
+    - mil gracias
+    - gracias por tu ayuda
+    - estoy muy agradecido/a
+    - te lo agradezco mucho
+    - infinitas gracias
+    - muchas gracias por todo
+    - gracias por explicármelo
+    - gracias, me has ayudado mucho
+    - te agradezco mucho
+    - en serio, muchas gracias
+    - de verdad, gracias
+    - gracias por la información
+    - gracias por tu paciencia
+    - gracias, me sirvió mucho
+    - te lo agradezco de corazón
+ 
+- intent: out_of_scope
+  examples: |
+    - sdfgsd
+    - ajdklasjdl
+    - 123sdfsdf
+    - asdfghjkl
+    - kjshdfkjshdf
+    - ¿Quién es el presidente de Estados Unidos?
+    - Quiero pedir comida
+    - Quiero un gato
+    - me apetece comer
+
+#// =====================================================
+#//                   TEORIA DIVISIÓN
+#// =====================================================
+- intent: tipos_division
+  examples: |
+    - Quiero dividir 
+    - me explicas las divisiones
+    - Quiero aprender a dividir
+    - Quiero saber que es la división
+    - Como puedo aprender a dividir
+    - ¿Cómo se divide?
+    - Enséñame a dividir
+    - Explícame la división
+    - ¿Me puedes explicar qué es dividir?
+    - ¿Qué es la división?
+    - ¿Cómo funciona la división?
+    - ¿Qué significa dividir?
+    - ¿Cómo se hace una división?
+    - ¿Qué es dividir una cantidad?
+    - que es dividir
+    - me explicas la división
+    - como se divide
+    - que es la divisón
+    - que es una division
+
+- intent: elegir_division_sola_cifra
+  examples: |
+    - Quiero aprender divisiones de una cifra
+    - Enséñame divisiones con un número
+    - Explícame las divisiones fáciles
+
+- intent: elegir_division_dos_cifras
+  examples: |
+    - ¿Cómo se hacen las divisiones de dos cifras?
+    - Quiero aprender divisiones más difíciles
+    - Explica la división con dos números
+
+- intent: elegir_division_decimales
+  examples: |
+    - ¿Cómo se dividen los números con decimales?
+    - Quiero aprender divisiones con punto decimal
+    - Explícame las divisiones con decimales
+
+- intent: elegir_division_residuo
+  examples: |
+    - ¿Qué es la división con residuo?
+    - Quiero aprender a dividir cuando sobra algo
+    - Enséñame la división con restos
+
+#// =====================================================
+#//                   PREGUNTAS EJERCICIOS
+#// =====================================================
+
+#En este apartado los usuarios podrán pedir ejercicios para practicar.
+# Pueden elegir entre problemas con enunciados o ejericicios sueltos
+- intent: request_practice_div
+  examples: |
+    - quiero hacer divisiones
+    - practiquemos divisiones
+    - quiero practicar divisiones
+    - me toca hacer las divisiones
+    - dame una división para practicar
+    - quiero hacer algunas divisiones
+    - dame más divisiones para resolver
+    - tengo que practicar divisiones
+    - necesito hacer divisiones
+    - ¿puedes darme algunos ejercicios de división?
+    - quiero practicar matemáticas con divisiones
+    - me gustaría resolver divisiones ahora
+    - ponme más divisiones para hacer
+
+- intent: elegir_division_enunciados
+  examples: |
+    - quiero practicar divisiones con enunciados
+    - dame problemas de división con historia
+    - quiero resolver divisiones con contexto
+    - ¿tienes ejercicios de división con enunciados?
+    - ¿puedes darme problemas de división escritos?
+    - quiero hacer problemas de división con enunciados
+    - necesito ejercicios de división con historia
+    - dame un problema de división con enunciado
+    - ¿me puedes ayudar con divisiones en forma de problemas?
+    - quiero hacer divisiones de primaria con enunciado
+    - dame un ejercicio de división como un problema
+    - dame una división con contexto o historia
+    - problemas de dividir con enunciados detallados
+    - dame ejercicios de división con texto
+
+
+- intent: elegir_division_sueltas
+  examples: |
+    - quiero practicar divisiones sin enunciados
+    - dame divisiones sin contexto
+    - quiero practicar divisiones sueltas
+    - quiero hacer operaciones de división simples
+    - ponme divisiones rápidas para resolver
+    - dame ejercicios de división sin historia
+    - quiero hacer divisiones directamente
+    - ¿me puedes dar algunas divisiones matemáticas?
+    - quiero hacer divisiones sin enunciado
+    - ponme divisiones sueltas para practicar
+    - dame solo divisiones matemáticas sin contexto
+    - quiero hacer cuentas de dividir sin explicación
+    - dame divisiones sin ningún problema escrito
+    - necesito practicar divisiones sin detalles
+    - solo quiero hacer divisiones
+    - dame divisiones directas
+
+- intent: elegir_numero_ejercicios
+  examples: |
+    - Quiero hacer [2](numero) ejercicios
+    - Quiero hacer [4](numero) ejercicios
+    - Necesito [6](numero) ejercicios
+    - Prefiero [10](numero) ejercicios
+    - Dame [8](numero) ejercicios
+  
+- intent: answer_division
+  examples: |
+    - 2
+    - 5
+    - 10
+    - Es 4
+    - Creo que es 7
+    - La respuesta es 8
+    - Es 3?
+    - 8
+    - 6
+    - 1
+
+- intent: elegir_dificultad
+  examples: |
+    - Quiero ejercicios de nivel [fácil](dificultad)
+    - Dame ejercicios de dificultad [media](dificultad)
+    - Prefiero ejercicios [difíciles](dificultad)
+    - ¿Tienes ejercicios nivel [experto](dificultad)?
+    - Me gustaría practicar en nivel [intermedio](dificultad)
+    - Selecciona la dificultad [fácil](dificultad)
+    - Elijo la dificultad [difícil](dificultad)
+    - Nivel [medio](dificultad), por favor
+    - Vamos con ejercicios [fáciles](dificultad)
+    - Quiero probar el nivel [experto](dificultad)
+
+- intent: elegir_dificultad_enunciados
+  examples: |
+    - Quiero enunciados de nivel [fácil](dificultad)
+    - Dame enunciados de dificultad [media](dificultad)
+    - Prefiero enunciados [difíciles](dificultad)
+    - ¿Tienes enunciados nivel [experto](dificultad)?
+    - Me gustaría practicar enunciados en nivel [intermedio](dificultad)
+    - Selecciona la dificultad [fácil](dificultad) para enunciados
+    - Vamos con enunciados [fáciles](dificultad)
+    - Quiero probar enunciados con el nivel [experto](dificultad)
+#// =====================================================
+#//                   PREGUNTAS SOLUCIONES
+#// =====================================================
+# OPERACIONES MATEMÁTICAS
+- intent: ask_sum
+  examples: |
+    - ¿Cuánto es [5](number1) más [3](number2)?
+    - Suma [12](number1) y [4](number2)
+    - [7](number1) + [2](number2)
+    - ¿Qué da [10](number1) más [15](number2)?
+    - ¿Me puedes decir cuánto es [8](number1) más [6](number2)?
+    - Calcula la suma de [20](number1) y [10](number2)
+    - ¿Cuál es el resultado de [3](number1) más [9](number2)?
+    - Suma [50](number1) más [25](number2)
+    - ¿Puedes sumar [100](number1) y [200](number2)?
+    - ¿Qué resultado tiene [30](number1) más [70](number2)?
+    - ¿Cuánto da si sumas [5](number1) y [2](number2)?
+    - ¿Puedes decirme la suma de [14](number1) y [16](number2)?
+    - [9](number1) más [11](number2)
+    - ¿Cuánto suman [40](number1) y [60](number2)?
+    - Calcula cuánto es [7](number1) más [13](number2)
+    - ¿cuánto es 2 más 2?
+    - ¿cuánto es 3 más 5?
+    - suma 2 + 3
+    - ¿Cuánto es [2.5](number1) más [3.7](number2)?
+    - Suma [12.5](number1) y [4.2](number2)
+    - [7.3](number1) + [2.6](number2)
+    - ¿Qué da [10.1](number1) más [15.5](number2)?
+  
+- intent: ask_div_int
+  examples: |
+    - ¿Cuánto es 10 entre 2?
+    - Divide 15 entre 3
+    - ¿Cuál es el resultado de 20 / 5?
+    - ¿Cuánto es [10](number1) dividido entre [2](number2)?
+    - Divide [12](number1) entre [4](number2)
+    - ¿Qué da [16](number1) dividido por [4](number2)?
+    - ¿Me puedes decir cuánto es [100](number1) entre [5](number2)?
+    - ¿Cuánto da [50](number1) dividido entre [25](number2)?
+    - Divide [200](number1) entre [20](number2)
+    - ¿Qué da [80](number1) dividido por [8](number2)?
+    - ¿Cuánto es [120](number1) dividido entre [6](number2)?
+    - ¿Cuánto da [9](number1) entre [3](number2)?
+    - ¿Me puedes decir cuánto es [200](number1) dividido entre [10](number2)?
+    - ¿Qué da [15](number1) entre [3](number2)?
+    - Divide [75](number1) entre [15](number2)
+    - ¿Qué da [36](number1) dividido entre [6](number2)?
+    - ¿Cuánto es [27](number1) dividido por [3](number2)?
+    - ¿Cuánto es [36](number1) dividido entre [4](number2)?
+    - Divide [90](number1) entre [9](number2)
+    - ¿Qué da [48](number1) dividido entre [6](number2)?
+    - ¿Cuánto da [36](number1) dividido entre [12](number2)?
+    - ¿Me puedes decir cuánto es [63](number1) dividido entre [7](number2)?
+    - ¿Cuánto es [72](number1) dividido entre [9](number2)?

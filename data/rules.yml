@@ -1,0 +1,149 @@
+version: "3.1"
+
+rules:
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: ask_wellbeing
+  - action: utter_ask_wellbeing
+
+- rule: mood great
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Respond to "Who are you?"
+  steps:
+    - intent: ask_who_are_you
+    - action: action_who_are_you
+
+#usuario tenga la intención ask_div_int, debe ejecutar action_div.
+- rule: Responder con la acción de división
+  steps:
+  - intent: ask_div_int
+  - action: action_div
+
+- rule: Responder con la acción de sumar
+  steps:
+  - intent: ask_sum
+  - action: action_sum
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: agradecer
+  steps:
+  - intent: agradecer
+  - action: utter_agradecer
+
+- rule: Responder con fallback cuando no se reconoce un intent
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+#- rule: teoría de la división
+#  steps:
+#    - intent: theory_div
+#    - action: utter_theory_div
+
+- rule: Animar
+  steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+
+
+#Tengo lo mismo en  stories, tecnicamente si lo tengo en  stories no hace falta tenerle en rule
+- rule: Verificar respuesta de la división
+  steps:
+    - intent: answer_division
+    - action: action_check_division_answer
+    #- action: action_review_incorrect_divisions
+####################################################
+############## USUARIO PIDE PRACTICAR ##############
+####################################################
+- rule: Responder cuando el usuario quiere practicar divisiones
+  steps:
+  - intent: request_practice_div
+  - action: utter_request_practice_div
+############### DIVISIONES SUELTAS ###############
+- rule: Usuario elige divisiones sueltas
+  steps:
+    - intent: elegir_division_sueltas
+    - action: utter_elegir_nivel_dificultad
+
+- rule: Usuario elige dificultad para divisiones sueltas
+  steps:
+    - intent: elegir_dificultad
+    - action: utter_elegir_numero_ejercicios
+
+- rule: Elegir numero
+  steps:
+  - intent: elegir_numero_ejercicios
+    entities:
+          - numero 
+  - action: action_generar_ejercicios
+############### DIVISIONES ENUNCIADOS ###############
+- rule: Elegir divisiones con Enunciados
+  steps:
+    - intent: elegir_division_enunciados
+    - action: utter_elegir_nivel_dificultad_enunciados
+
+- rule: Usuario elige dificultad para divisiones con enunciados
+  steps:
+    - intent: elegir_dificultad_enunciados
+    - action: utter_elegir_numero_ejercicios_enunciados
+
+- rule: Elegir numero enunciados
+  steps:
+  - intent: elegir_numero_ejercicios_enunciados
+    entities:
+          - numero 
+  - action: action_generar_ejercicios
+
+
+############### TEORIA DIVISIONES ###############
+- rule: Usuario quiere aprender sobre tipos de división
+  steps:
+    - intent: tipos_division
+    - action: utter_tipos_division
+
+- rule: Usuario elige división de una cifra
+  steps:
+    - intent: elegir_division_sola_cifra
+    - action: utter_division_sola_cifra
+
+- rule: Usuario elige división de dos cifras
+  steps:
+    - intent: elegir_division_dos_cifras
+    - action: utter_division_dos_cifras
+
+- rule: Usuario elige división con decimales
+  steps:
+    - intent: elegir_division_decimales
+    - action: utter_division_decimales
+
+- rule: Usuario elige división con residuo
+  steps:
+    - intent: elegir_division_residuo
+    - action: utter_division_residuo
+
+
+
+
+
