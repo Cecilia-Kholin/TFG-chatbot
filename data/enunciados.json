@@ -1,0 +1,26 @@
+{
+    "fácil": [
+        "Si tienes {dividendo} caramelos y los repartes entre {divisor} niños, ¿cuántos recibe cada uno?",
+        "Un granjero tiene {dividendo} manzanas y quiere dividirlas en {divisor} cajas. ¿Cuántas manzanas habrá en cada caja?",
+        "En una fiesta hay {dividendo} globos y se reparten en {divisor} mesas. ¿Cuántos globos hay en cada mesa?",
+        "De excursión por el bosque, recogimos {dividendo} moras, que gastamos por completo haciendo pasteles. Si pusimos {divisor} moras en cada pastel, ¿cuántos pasteles de moras hicimos?"
+    ],
+    "medio": [
+        "En una escuela, {dividendo} libros deben ser distribuidos equitativamente entre {divisor} estantes. ¿Cuántos libros irán en cada estante?",
+        "Un supermercado tiene {dividendo} latas de refresco y las quiere colocar en filas de {divisor} latas cada una. ¿Cuántas filas podrá hacer?",
+        "Un camión transporta {dividendo} cajas y las organiza en pilas de {divisor} cajas cada una. ¿Cuántas pilas se formarán?",
+        "Un panadero hornea {dividendo} galletas y las guarda en bandejas con {divisor} galletas cada una. ¿Cuántas bandejas llenará?"
+    ],
+    "difícil": [
+        "Si hay {dividendo} alumnos en una escuela y se organizan en grupos de {divisor}, ¿cuántos grupos completos se formarán? ¿Sobrarán alumnos?",
+        "Un chef tiene {dividendo} gramos de harina y quiere dividirla en bolsas de {divisor} gramos. ¿Cuántas bolsas completas obtendrá y cuántos gramos sobrarán?",
+        "Un entrenador tiene {dividendo} pelotas y quiere repartirlas en equipos de {divisor} jugadores. ¿Cuántas pelotas recibirá cada equipo y cuántas quedarán sin repartir?",
+        "Una fábrica produce {dividendo} juguetes y los coloca en paquetes de {divisor} unidades. ¿Cuántos paquetes completos se pueden hacer y cuántos juguetes quedarán fuera?"
+    ],
+    "experto": [
+        "En un restaurante se usan {divisor} gramos de arroz por porción. Si un día se preparan {dividendo} gramos de arroz, ¿cuántas porciones exactas se obtendrán y cuántos gramos sobrarán?",
+        "Una impresora puede imprimir {divisor} páginas por minuto. Si tiene que imprimir {dividendo} páginas, ¿cuántos minutos tardará? ¿Habrá un minuto donde imprima solo una parte?",
+        "Un tanque de agua tiene {dividendo} litros y se vacía a razón de {divisor} litros por hora. ¿Cuántas horas completas tardará en vaciarse y cuántos litros quedarán después de la última hora?",
+        "Un negocio debe repartir {dividendo} dólares entre {divisor} empleados. ¿Cuánto recibe cada uno y sobrarán centavos?"
+    ]
+}

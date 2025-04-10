@@ -1,0 +1,185 @@
+
+.App-header {
+  background-color: #d3d1d6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+  width: 100%; /* Ocupa todo el ancho disponible */
+  position: relative;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* 🔹 Modo Normal */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* 🔹 Modo Oscuro (SE APLICA A TODA LA PÁGINA) */
+/* 🔹 Estilos de .App-header en modo oscuro */
+.dark-mode .App-header {
+  background-color: #1E1E1E; /* Fondo oscuro */
+  color: #FFFFFF; /* Texto claro */
+}
+
+/* Cambia los elementos dentro del chat en modo oscuro */
+.dark-mode .chat-container {
+  height: 80vh;
+  background-color: #333;
+  border: 2px solid #555;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Cambia el color del texto en los mensajes */
+.dark-mode .message__bubble {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .message__bubble_paint {
+  background-color: #444;
+  color: white;
+}
+/* Cambia los botones del header en modo oscuro */
+.dark-mode .header-button {
+  background: #444;
+  color: white;
+}
+
+.dark-mode .header-button:hover {
+  background: #666;
+}
+
+/* Cambia el color del input y el botón de enviar */
+.dark-mode .input-container input {
+  background: #555;
+  color: white;
+  border-color: #777;
+}
+
+.dark-mode .input-container input::placeholder {
+  color: #bbb;
+}
+
+.dark-mode .send-button {
+  background-color: #444;
+}
+
+.dark-mode .send-button:hover {
+  background-color: #666;
+}
+
+.dark-mode .bot-option {
+  background: #e087c4;
+}
+.dark-mode .bot-option::before {
+  background: #8e4e7b; /*fondo sombra*/
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+}
+
+/* Efecto al pasar el mouse */
+.dark-mode .bot-option:hover {
+  background: #8e4e7b;
+  transform: translate(0, 0.25em);
+}
+
+.dark-mode .bot-option:hover::before {
+  box-shadow: 0 0 0 2px #8e4e7b, 0 0.5em 0 0 #8e4e7b;
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+/* Efecto al hacer clic */
+.dark-mode .bot-option:active {
+  background:  #8e4e7b;
+  transform: translate(0em, 0.75em);
+}
+
+.dark-mode .bot-option:active::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0  #8e4e7b;
+  transform: translate3d(0, 0, -1em);
+}
+
+/* 🔹 SWITCH DE MODO OSCURO */
+.switch {
+  margin-left: auto;
+  padding: 20px;
+  width: 50px;
+  height: 25px;
+  align-items: center; 
+  margin-bottom: 20px;
+
+}
+.switch-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centra el texto en la página */
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  font-weight: bold;
+  margin: 0; 
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+  align-items: center;
+  padding: 3px;
+}
+
+.switch input:checked + .slider {
+  background-color: #007bff;
+}
+
+/* 🔹 EFECTO DEL SOL Y LA LUNA EN CSS */
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  transition: 0.4s;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch input:checked + .slider:before {
+  background-color: yellow;
+  box-shadow: 0 0 8px rgba(255, 255, 0, 0.9);
+  transform: translateX(25px) translateY(-50%);
+}
+
+/* 🔹 Cambia el color del switch en modo oscuro */
+.dark-mode .slider {
+  background-color: #444;
+}
+
+
+.img-fluid{
+  width: 70%; /* Ajusta el tamaño si es necesario */
+}
