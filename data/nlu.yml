@@ -27,7 +27,6 @@ nlu:
     - Hola, comencemos
     - ¡Buenas, equipo!
     
-#le pregunta como esta 
 - intent: ask_wellbeing
   examples: |
     - ¿Qué tal?
@@ -120,7 +119,6 @@ nlu:
     - Negativo
 
 
-#MIRAR. NO TENGO RESPUESTAS PARA ESTO
 - intent: mood_great
   examples: |
     - Perfecto
