@@ -1,7 +1,5 @@
 #Lo que el usuario preguntará al robot.
 version: "3.1"
-#VER ESTOOO: 
-#quiero ser super inteligente
 nlu:
 
 #// =====================================================
