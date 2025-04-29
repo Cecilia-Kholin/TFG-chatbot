@@ -245,7 +245,7 @@ class ActionCheckDivisionAnswer(Action):
 
 class ActionGenerarEjercicios(Action):
     def name(self):
-        return "action_generar_ejercicios"
+        return "action_generate_exercises"
 
     def run(self, dispatcher, tracker, domain):
         print("-------------ACTION GENERAR EJERCICIOS---------------")

@@ -186,7 +186,7 @@ nlu:
     - ¿Qué funciones tienes?
     - ¿Cuál es tu propósito?
 
-- intent: agradecer
+- intent: thank_you
   examples: |
     - gracias
     - muchas gracias
@@ -222,7 +222,7 @@ nlu:
 #// =====================================================
 #//                   TEORIA DIVISIÓN
 #// =====================================================
-- intent: tipos_division
+- intent: division_type
   examples: |
     - Quiero dividir 
     - me explicas las divisiones
@@ -244,25 +244,25 @@ nlu:
     - que es la divisón
     - que es una division
 
-- intent: elegir_division_sola_cifra
+- intent: choose_one_digit_division
   examples: |
     - Quiero aprender divisiones de una cifra
     - Enséñame divisiones con un número
     - Explícame las divisiones fáciles
 
-- intent: elegir_division_dos_cifras
+- intent: choose_two_digit_division
   examples: |
     - ¿Cómo se hacen las divisiones de dos cifras?
     - Quiero aprender divisiones más difíciles
     - Explica la división con dos números
 
-- intent: elegir_division_decimales
+- intent: choose_decimal_division
   examples: |
     - ¿Cómo se dividen los números con decimales?
     - Quiero aprender divisiones con punto decimal
     - Explícame las divisiones con decimales
 
-- intent: elegir_division_residuo
+- intent: choose_division_with_remainder
   examples: |
     - ¿Qué es la división con residuo?
     - Quiero aprender a dividir cuando sobra algo
@@ -290,7 +290,7 @@ nlu:
     - me gustaría resolver divisiones ahora
     - ponme más divisiones para hacer
 
-- intent: elegir_division_enunciados
+- intent: choose_number_of_exercises
   examples: |
     - quiero practicar divisiones con enunciados
     - dame problemas de división con historia
@@ -308,7 +308,7 @@ nlu:
     - dame ejercicios de división con texto
 
 
-- intent: elegir_division_sueltas
+- intent: choose_individual_divisions
   examples: |
     - quiero practicar divisiones sin enunciados
     - dame divisiones sin contexto
@@ -327,7 +327,7 @@ nlu:
     - solo quiero hacer divisiones
     - dame divisiones directas
 
-- intent: elegir_numero_ejercicios
+- intent: choose_number_of_exercises
   examples: |
     - Quiero hacer [2](numero) ejercicios
     - Quiero hacer [4](numero) ejercicios
@@ -348,7 +348,7 @@ nlu:
     - 6
     - 1
 
-- intent: elegir_dificultad
+- intent: choose_difficulty
   examples: |
     - Quiero ejercicios de nivel [fácil](dificultad)
     - Dame ejercicios de dificultad [media](dificultad)
@@ -361,7 +361,7 @@ nlu:
     - Vamos con ejercicios [fáciles](dificultad)
     - Quiero probar el nivel [experto](dificultad)
 
-- intent: elegir_dificultad_enunciados
+- intent: choose_statement_difficulty
   examples: |
     - Quiero enunciados de nivel [fácil](dificultad)
     - Dame enunciados de dificultad [media](dificultad)

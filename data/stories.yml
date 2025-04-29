@@ -67,16 +67,16 @@ stories:
   steps:
     - intent: request_practice_div  #intent del nlu, pide por hacer divisiones
     - action: utter_request_practice_div #botones de sueltas o con enunciados
-    - intent: elegir_division_sueltas    #elige sueltas 
+    - intent: choose_individual_divisions    #elige sueltas 
     - action: utter_elegir_nivel_dificultad  #botones de dificultad
-    - intent: elegir_dificultad
+    - intent: choose_difficulty
       entities:
         - dificultad: dificultad
-    - action: utter_elegir_numero_ejercicios
-    - intent: elegir_numero_ejercicios
+    - action: utter_choose_number_of_exercises
+    - intent: choose_number_of_exercises
       entities:
           - numero #solo necesitas indicar que la entidad numero puede estar presente en el intent. No debes listar múltiples valores en la misma historia
-    - action: action_generar_ejercicios
+    - action: action_generate_exercises
     - intent: answer_division
     - action: action_check_division_answer
     #- action: action_review_incorrect_divisions
@@ -86,16 +86,16 @@ stories:
   steps:
     - intent: request_practice_div
     - action: utter_request_practice_div #botones
-    - intent: elegir_division_enunciados
+    - intent: choose_statment_division
     - action: utter_elegir_nivel_dificultad_enunciados  #botones de dificultad
-    - intent: elegir_dificultad_enunciados
+    - intent: choose_statement_difficulty
       entities:
         - dificultad: dificultad
-    - action: utter_elegir_numero_ejercicios_enunciados
-    - intent: elegir_numero_ejercicios_enunciados
+    - action: utter_choose_number_of_statement_exercises
+    - intent: choose_number_of_statement_exercises
       entities:
           - numero
-    - action: action_generar_ejercicios
+    - action: action_generate_exercises
     - intent: answer_division
     - action: action_check_division_answer
     #- action: action_review_incorrect_divisions
@@ -105,25 +105,25 @@ stories:
 # DESDE DE PREGUNTAR POR LOS TIPOS  DE DIVISIONES EL USUARIO ELIGE 1 ()
 - story: usuario quiere aprender a dividir
   steps:
-    - intent: tipos_division
-    - action: utter_tipos_division
+    - intent: division_type
+    - action: utter_division_type
 
 - story: usuario elige división de una cifra
   steps:
-    - intent: elegir_division_sola_cifra
-    - action: utter_division_sola_cifra
+    - intent: choose_one_digit_division
+    - action: utter_choose_one_digit_division
 
 - story: usuario elige división de dos cifras
   steps:
-    - intent: elegir_division_dos_cifras
-    - action: utter_division_dos_cifras
+    - intent: choose_two_digit_division
+    - action: utter_choose_two_digit_division
 
 - story: usuario elige división con decimales
   steps:
-    - intent: elegir_division_decimales
-    - action: utter_division_decimales
+    - intent: choose_decimal_division
+    - action: utter_choose_decimal_division
 
 - story: usuario elige división con residuo
   steps:
-    - intent: elegir_division_residuo
-    - action: utter_division_residuo
+    - intent: choose_division_with_remainder
+    - action: utter_choose_division_with_remainder

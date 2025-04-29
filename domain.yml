@@ -13,25 +13,24 @@ intents:
   - ask_div_int
   - ask_who_are_you
   - out_of_scope
-  - agradecer
-  #- theory_div #explicar de forma TEORICA la division
+  - thank_you
   #PREGUNTAS EJERCICIOS
   - request_practice_div
   - answer_division
-  - tipos_division
-  - elegir_division_sola_cifra
-  - elegir_division_dos_cifras
-  - elegir_division_decimales
-  - elegir_division_residuo
+  - division_type
+  - choose_one_digit_division
+  - choose_two_digit_division
+  - choose_decimal_division
+  - choose_division_with_remainder
   #
-  - elegir_division_enunciados
-  - elegir_division_sueltas
+  - choose_statment_division
+  - choose_individual_divisions
   #-
-  - elegir_numero_ejercicios
-  - elegir_numero_ejercicios_enunciados
+  - choose_number_of_exercises
+  - choose_number_of_statement_exercises
   #-
-  - elegir_dificultad
-  - elegir_dificultad_enunciados
+  - choose_difficulty
+  - choose_statement_difficulty
   - reset_slot
 
 entities:
@@ -47,10 +46,9 @@ actions:
   #actions para dar ejemplos
   - action_exercises
   - action_check_division_answer
-  - action_generar_ejercicios
+  - action_generate_exercises
   #- action_review_incorrect_divisions
-  - action_prueba
-  - action_enviar_correccion
+  #- action_send_correction
 
 
 #// =====================================================
@@ -101,10 +99,10 @@ slots:
     type: text
     mappings:
       - type: from_intent
-        intent: elegir_division_sueltas
+        intent: choose_individual_divisions
         value: "sueltas"
       - type: from_intent
-        intent: elegir_division_enunciados
+        intent: choose_statment_division
         value: "enunciados"
   #Dificultad EJERCICIO
   dificultad:
@@ -206,7 +204,7 @@ responses:
     - text: "No he entendido lo que dijiste. ¿Podrías escribirlo de otra forma?"
     - text: "Lo siento, pero no comprendí tu mensaje. Intenta decirlo de otra manera."
 
-  utter_agradecer:
+  utter_thank_you:
     - text: "¡De nada! 😊"
     - text: "No hay de qué. ¡Siempre feliz de ayudar!"
     - text: "¡Con gusto! Si necesitas algo más, aquí estoy."
@@ -228,27 +226,27 @@ responses:
 #// =====================================================
 #//              BOTONES TIPOS DE DIVISIONES
 #// =====================================================
-  utter_tipos_division:
+  utter_division_type:
     - text: "¿Qué tipo de división te gustaría aprender?\n\n"
       buttons:
       - title: "División de una cifra"
-        payload: "/elegir_division_sola_cifra" #poner aqui el intent
+        payload: "/choose_one_digit_division" #poner aqui el intent
       - title: "División de dos cifras"
-        payload: "/elegir_division_dos_cifras"
+        payload: "/choose_two_digit_division"
       - title: "División con decimales"
-        payload: "/elegir_division_decimales"
+        payload: "/choose_decimal_division"
       - title: "División con residuo"
-        payload: "/elegir_division_residuo"
+        payload: "/choose_division_with_remainder"
 
-  utter_division_sola_cifra:
+  utter_choose_one_digit_division:
     - text: "¡Mira qué divertido! Hay 10 caramelos 🍬 y los dos niños los están repartiendo para que a cada uno le toque lo mismo.
         Eso es dividir. 😊 Al final, cada uno recibe 5 caramelos, porque 10 dividido entre 2 es igual a 5."
       image: "http://localhost:3000/1.gif"
 
-  utter_division_dos_cifras:
+  utter_choose_two_digit_division:
     - text: "En las divisiones de dos cifras, el divisor tiene dos números. Ejemplo: 144 ÷ 12 = 12."
 
-  utter_division_decimales:
+  utter_choose_decimal_division:
     - text: |
        🔹 Divide como siempre.
        🔹 Si sobra algo, añade una coma.
@@ -256,7 +254,7 @@ responses:
        🔹 ¡Ya estás trabajando con decimales!
       image: "http://localhost:3000/decimales.gif"
 
-  utter_division_residuo:
+  utter_choose_division_with_remainder:
     - text: |
         A veces, cuando dividimos, nos sobra algo.
         Si queremos saber exactamente cuánto le toca a cada uno, usamos decimales.
@@ -272,57 +270,57 @@ responses:
     - text: "¿Como quieres practicar las divisiones?\n\n"
       buttons:
       - title: "División con enunciados"
-        payload: "/elegir_division_enunciados" #poner aqui el intent
+        payload: "/choose_statment_division" #poner aqui el intent
       - title: "División sueltas"
-        payload: "/elegir_division_sueltas"
+        payload: "/choose_individual_divisions"
 
-  utter_elegir_numero_ejercicios_enunciados:
+  utter_choose_number_of_statement_exercises:
     - text: "¿Cuántos ejercicios con enunciados quieres practicar📝?"
       buttons:
         - title: "2 enunciados"
-          payload: /elegir_numero_ejercicios_enunciados{{"numero":"2"}}
+          payload: /choose_number_of_statement_exercises{{"numero":"2"}}
         - title: "4 enunciados"
-          payload: /elegir_numero_ejercicios_enunciados{{"numero":"4"}}
+          payload: /choose_number_of_statement_exercises{{"numero":"4"}}
         - title: "6 enunciados"
-          payload: /elegir_numero_ejercicios_enunciados{{"numero":"6"}}
+          payload: /choose_number_of_statement_exercises{{"numero":"6"}}
         - title: "10 enunciados"
-          payload: /elegir_numero_ejercicios_enunciados{{"numero":"10"}}
+          payload: /choose_number_of_statement_exercises{{"numero":"10"}}
 
-  utter_elegir_numero_ejercicios:
+  utter_choose_number_of_exercises:
     - text: "¿Cuántos ejercicios quieres practicar?"
       buttons:
         - title: "2 ejercicios"
-          payload: /elegir_numero_ejercicios{{"numero":"2"}}
+          payload: /choose_number_of_exercises{{"numero":"2"}}
         - title: "4 ejercicios"
-          payload: /elegir_numero_ejercicios{{"numero":"4"}}
+          payload: /choose_number_of_exercises{{"numero":"4"}}
         - title: "6 ejercicios"
-          payload: /elegir_numero_ejercicios{{"numero":"6"}}
+          payload: /choose_number_of_exercises{{"numero":"6"}}
         - title: "10 ejercicios"
-          payload: /elegir_numero_ejercicios{{"numero":"10"}}
+          payload: /choose_number_of_exercises{{"numero":"10"}}
 
   utter_elegir_nivel_dificultad:
      - text: "Nivel de dificultad"
        buttons:
         - title: "Fácil"
-          payload: /elegir_dificultad{{"dificultad":"fácil"}}
+          payload: /choose_difficulty{{"dificultad":"fácil"}}
         - title: "Medio"
-          payload: /elegir_dificultad{{"dificultad":"medio"}}
+          payload: /choose_difficulty{{"dificultad":"medio"}}
         - title: "Difícil-residuos"
-          payload: /elegir_dificultad{{"dificultad":"difícil"}}
+          payload: /choose_difficulty{{"dificultad":"difícil"}}
         - title: "Experto-decimales"
-          payload: /elegir_dificultad{{"dificultad":"experto"}}
+          payload: /choose_difficulty{{"dificultad":"experto"}}
 
   utter_elegir_nivel_dificultad_enunciados:
      - text: "Nivel de dificultad para tus enunciados"
        buttons:
         - title: "Fácil"
-          payload: /elegir_dificultad_enunciados{{"dificultad":"fácil"}}
+          payload: /choose_statement_difficulty{{"dificultad":"fácil"}}
         - title: "Medio"
-          payload: /elegir_dificultad_enunciados{{"dificultad":"medio"}}
+          payload: /choose_statement_difficulty{{"dificultad":"medio"}}
         - title: "Difícil"
-          payload: /elegir_dificultad_enunciados{{"dificultad":"difícil"}}
+          payload: /choose_statement_difficulty{{"dificultad":"difícil"}}
         - title: "Experto"
-          payload: /elegir_dificultad_enunciados{{"dificultad":"experto"}}
+          payload: /choose_statement_difficulty{{"dificultad":"experto"}}
 
 session_config:
   session_expiration_time: 60

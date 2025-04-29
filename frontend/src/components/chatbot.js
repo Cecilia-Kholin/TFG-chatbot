@@ -185,7 +185,6 @@ const Chatbot = ({setCorrectAnswers}) => {
             )}
             {msg.custom && (
               <div className="message__bubble">
-                <h3>Corrección Visual de Errores</h3>
                 {msg.custom.map((division, i) => (
                   <DivisionIncorrectaSVG
                     key={i}

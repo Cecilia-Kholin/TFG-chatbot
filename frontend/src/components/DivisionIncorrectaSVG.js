@@ -9,7 +9,6 @@ const DivisionIncorrectaSVG = ({ dividendo, divisor, respuestaCorrecta, respuest
 
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "20px" }}>
-      <h3>Visualización de la división incorrecta</h3>
 
       <svg width="400" height="300" viewBox="0 0 400 300">
         {/* Etiquetas */}

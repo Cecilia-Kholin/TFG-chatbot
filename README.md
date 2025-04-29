@@ -47,7 +47,7 @@ npm start
 
 
 rasa run --enable-api --cors "*"
-Poner "*" permite acceso desde cualquier dominio, lo cual no es seguro en producción. Para mayor seguridad, puedes especificar solo los dominios permitidos:
+Poner "*" permite acceso desde cualquier dominio, lo cual no es seguro en producción.
 rasa run --enable-api --cors "https://midominio.com"
 
 
