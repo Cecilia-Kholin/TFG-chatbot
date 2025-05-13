@@ -404,7 +404,10 @@ nlu:
   examples: |
     - ¿Cuánto es 10 entre 2?
     - Divide 15 entre 3
-    - ¿Cuál es el resultado de 20 / 5?
+    - Divide [10](number1) / [2](number2)
+    - [10](number1) / [2](number2)
+    - cuanto es 2(number1) / 5(number2)
+    - ¿Cuál es el resultado de 20(number1) / 5(number2)?
     - ¿Cuánto es [10](number1) dividido entre [2](number2)?
     - Divide [12](number1) entre [4](number2)
     - ¿Qué da [16](number1) dividido por [4](number2)?

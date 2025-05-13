@@ -124,27 +124,6 @@ class ActionDiv(Action):
         dispatcher.utter_message(text=response)
         return []
 
-
-class ActionGenerateDivisionExercises(Action):
-    def name(self):
-        return "action_exercises"
-
-    def run(self, dispatcher, tracker, domain):
-        ejercicio = generate_division()  # Genera un solo ejercicio
-
-        first_request = tracker.get_slot("first_division_request")  # Obtener el valor del slot
-
-        if first_request:  # Si es la primera vez que se solicita una división
-            dispatcher.utter_message(text=f"¡Genial, ve a por papel y boli! Vamos a hacer unas divisiones.\n\n¿Cuánto es {ejercicio['dividendo']} ÷ {ejercicio['divisor']}? 🤔")
-            # actualizar el slot a False
-            return [
-                SlotSet("first_division_request", False),
-                SlotSet("correct_answer", ejercicio["respuesta"])
-            ]
-        
-        dispatcher.utter_message(text=f"¿Cuánto es {ejercicio['dividendo']} ÷ {ejercicio['divisor']}? 🤔")
-        return [SlotSet("correct_answer", ejercicio["respuesta"])]
-    
 class ActionCheckDivisionAnswer(Action):
     def name(self):
         return "action_check_division_answer"
@@ -294,37 +273,4 @@ class ActionGenerarEjercicios(Action):
             SlotSet("current_exercise", 0),
             SlotSet("correct_answer", primer_ejercicio["respuesta"])
         ]
-    
-#### SUMA  ####
-class ActionResponderEjercicio(Action):
-
-    def name(self):
-        return "action_responder_ejercicio"
-
-    def run(self, dispatcher, tracker, domain):
-        # Obtenemos la respuesta del usuario
-        respuesta_usuario = tracker.latest_message.get("text")
-
-        # Obtenemos el ejercicio actual y los ejercicios restantes
-        current_exercise = tracker.get_slot("current_exercise")
-        ejercicios = tracker.get_slot("ejercicios")
-
-        # Validamos la respuesta (simple comparación de respuestas)
-        num1, num2 = map(int, ejercicios[current_exercise].split(" ÷ ")[0].split())
-        correct_answer = num1 // num2
-
-        if float(respuesta_usuario) == correct_answer:
-            dispatcher.utter_message(text="¡Respuesta correcta! 😊")
-        else:
-            dispatcher.utter_message(text=f"La respuesta correcta era {correct_answer}. 😔")
-
-        # Actualizamos el índice del ejercicio
-        next_exercise = current_exercise + 1
-
-        if next_exercise < len(ejercicios):
-            dispatcher.utter_message(text=f"Tu siguiente ejercicio: {ejercicios[next_exercise]}")
-            return [SlotSet("current_exercise", next_exercise)]
-        else:
-            dispatcher.utter_message(text="¡Has completado todos los ejercicios! 🎉")
-            return [SlotSet("current_exercise", None)]
-
+  

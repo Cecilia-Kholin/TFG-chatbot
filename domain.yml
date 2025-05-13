@@ -44,7 +44,6 @@ actions:
   - action_div
   - action_who_are_you
   #actions para dar ejemplos
-  - action_exercises
   - action_check_division_answer
   - action_generate_exercises
   #- action_review_incorrect_divisions
