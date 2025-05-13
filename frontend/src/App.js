@@ -17,6 +17,7 @@ function App() {
       setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
   }, []);
+  
 
   useEffect(() => {
     localStorage.setItem("dark-mode", JSON.stringify(darkMode));
@@ -43,19 +44,19 @@ function App() {
 
       <div className="row">
         {/* Columna izquierda: insignias */}
-        <div className="col-md-3 text-center mb-4"   data-intro="Aqui están tus logros">
+        <div className="col-md-3 text-center mb-4"   data-intro="Aquí están tus logros">
           <img 
-            src={correctAnswers >= 2 ? "logro_10.png" : "sinlogro10.png"} 
+            src={correctAnswers >= 10 ? "logro_10.png" : "sinlogro10.png"} 
             alt="Logro 10" 
             className="img-fluid mb-2"
           />
           <img 
-            src={correctAnswers >= 3 ? "logro50.png" : "sinlogro10.png"} 
+            src={correctAnswers >= 50 ? "logro50.png" : "sinlogro10.png"} 
             alt="Logro 50" 
             className="img-fluid mb-2"
           />
           <img 
-            src={correctAnswers >= 4 ? "logro100.png" : "sinlogro10.png"} 
+            src={correctAnswers >= 100 ? "logro100.png" : "sinlogro10.png"} 
             alt="Logro 100" 
             className="img-fluid mb-2"
           />

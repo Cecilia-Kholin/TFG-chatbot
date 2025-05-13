@@ -1,3 +1,27 @@
+//////////////////////////////////////////////////////
+///////////// INSALACIONES NECESARIAS ////////////////
+//////////////////////////////////////////////////////
+Node.js
+Python 3.8 o superior, el que se usó para ese proyeco fue 3.9.12
+RASA, el proyecto se realizó con la version 3.6.20
+
+
+/////////////////////// DEPENDENCIAS //////////////////////
+
+npm install bootstrap intro.js
+SpacyNLP: 
+    pip install spacy==3.5.4
+    python -m spacy download es_core_news_md
+
+
+
+/////////////////////// entrenamiento //////////////////////
+Hace falta entrenar el bot antes de usarlo, no esta subido al repositorio por el tamaño 
+
+
+Microsoft Visual C++ Build Tools, que es necesario para compilar partes de esa librería en Windows.
+
+
 python3.9 -m venv rasa-env
 source rasa-env/bin/activate
 
