@@ -1,0 +1,76 @@
+body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  color: white;}
+    header {
+      background-color: #4AC7FF;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    header a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    section {
+        padding: 50px;   
+    }
+    
+
+#inicio {
+    background-image: url("multimedia/logos/Purple Futuristic Technology Presentation.png");
+    padding: 50px;
+}
+.contenido-inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Para que en móvil se acomode en columna */
+}
+
+.texto-inicio {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 20px;
+    font-size: 1.3rem;
+    h1{
+        color: white;
+    }
+    p{
+        color: white;
+    }
+}
+.img-chatbot {
+  width: 400px;
+  max-width: 100%;
+}
+
+#contacto {
+  background-color: #4AC7FF; 
+  padding: 40px;
+  h2{
+    color: white;
+  }
+  p{
+    color: white;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: #8F58ED;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #EDA7EA;
+}
+
+button:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
