@@ -6,6 +6,11 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: Explicar función del bot
+  steps:
+    - intent: ask_bot_function
+    - action: utter_bot_function
+    
 - rule: Say hello anytime the user says hello
   steps:
   - intent: ask_wellbeing

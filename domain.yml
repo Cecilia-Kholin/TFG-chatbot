@@ -2,6 +2,7 @@ version: "3.1"
 
 intents:
   - greet
+  - ask_bot_function
   - ask_wellbeing
   - goodbye
   - affirm
@@ -145,11 +146,17 @@ responses:
   - text: "¡Vamos a dividir! ¿Cuáles son los dos números que quieres dividir?"
 
   utter_greet:
-    - text: "¡Hola! ¿En qué te puedo ayudar hoy?"
-    - text: "¡Hola! Estoy aquí para ayudarte, ¿qué necesitas?"
-    - text: "¡Bienvenido! ¿Cómo puedo asistirte?"
-    - text: "¡Hola! ¿Qué tal tu día? Cuéntame, ¿cómo te puedo ayudar?"
-    - text: "¡Hola! Estoy listo para ayudarte. ¿Qué necesitas?"
+  - text: "¡Hola! Soy un chatbot que te ayudará a aprender y practicar divisiones. ¿En qué te puedo ayudar hoy?"
+  - text: "¡Hola! Estoy aquí para resolver tus dudas sobre las divisiones y ayudarte a practicar. ¿Qué necesitas?"
+  - text: "¡Bienvenido! ¿Quieres repasar teoría o practicar divisiones? Yo te puedo ayudar."
+  - text: "¡Hola! Puedo ayudarte a entender cómo se hacen las divisiones. ¿Listo para empezar?"
+  - text: "¡Hola! Estoy listo para explicarte divisiones o darte ejercicios para practicar. ¿Qué prefieres?"
+
+  utter_bot_function:
+  - text: "¡Hola! Soy un robot que te ayuda a aprender divisiones. Puedo explicarte cómo se hacen y darte ejercicios para practicar. ¡Vamos a divertirnos aprendiendo!"
+  - text: "Estoy aquí para ayudarte con las divisiones. Si no entiendes algo, te lo explico. Y si quieres practicar, ¡también tengo ejercicios para ti!"
+  - text: "Puedo enseñarte a dividir paso a paso y corregir tus respuestas. Solo dime si quieres aprender o practicar, ¡y empezamos!"
+
 
   utter_ask_wellbeing:
     - text: "¡Genial! Ahora que has llegado, todo va mejor. ¿En qué te puedo ayudar?"
@@ -243,7 +250,7 @@ responses:
       image: "http://localhost:3000/1.gif"
 
   utter_choose_two_digit_division:
-    - text: "En las divisiones de dos cifras, el divisor tiene dos números. Ejemplo: 144 ÷ 12 = 12."
+    - text: "En las divisiones de dos cifras, el divisor tiene dos números. Ejemplo: 144 ÷ 12 = 12. Esto quiere decir que vamos a ver cuántas veces 12 cabe dentro de 144. Si hacemos la cuenta paso a paso, descubrimos que 12 × 12 = 144, así que 144 ÷ 12 = 12."
 
   utter_choose_decimal_division:
     - text: |

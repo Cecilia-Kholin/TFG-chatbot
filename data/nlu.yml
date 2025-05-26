@@ -26,7 +26,25 @@ nlu:
     - Hola, aquí estoy
     - Hola, comencemos
     - ¡Buenas, equipo!
-    
+
+- intent: ask_bot_function
+  examples: |
+    - ¿Qué puedes hacer?
+    - ¿Qué haces?
+    - ¿Para qué sirves?
+    - ¿Cómo me puedes ayudar?
+    - ¿Qué sabes hacer?
+    - ¿Cuál es tu función?
+    - ¿A qué te dedicas?
+    - ¿Con qué me puedes ayudar?
+    - ¿Eres un bot?
+    - ¿Qué tipo de ayuda ofreces?
+    - ¿Qué tipo de cosas haces?
+    - ¿En qué consiste tu trabajo?
+    - ¿Qué haces exactamente?
+    - ¿Qué sabes?
+
+
 - intent: ask_wellbeing
   examples: |
     - ¿Qué tal?
