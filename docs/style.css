@@ -1,6 +1,6 @@
 body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  color: white;}
     header {
-      background-color: #4AC7FF;
+      background-color: #2D114B;
       padding: 1em;
       text-align: center;
       position: sticky;
@@ -46,7 +46,7 @@ body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  co
 }
 
 #contacto {
-  background-color: #4AC7FF; 
+  background-color: #2D114B; 
   padding: 40px;
   h2{
     color: white;
@@ -59,14 +59,14 @@ body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  co
 button {
   border: none;
   outline: none;
-  background-color: #8F58ED;
+  background-color: #6B2C93;
   padding: 10px 20px;
   font-size: 12px;
   font-weight: 700;
   color: #fff;
   border-radius: 5px;
   transition: all ease 0.1s;
-  box-shadow: 0px 5px 0px 0px #EDA7EA;
+  box-shadow: 0px 5px 0px 0px #441b5e;
 }
 
 button:active {
