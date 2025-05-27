@@ -421,6 +421,9 @@ nlu:
 - intent: ask_div_int
   examples: |
     - ¿Cuánto es 10 entre 2?
+    - 12/4
+    - [10](number1)/[2](number2)
+    - Cuánto es [10](number1) entre [2](number2)
     - Divide 15 entre 3
     - Divide [10](number1) / [2](number2)
     - [10](number1) / [2](number2)

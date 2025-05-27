@@ -103,11 +103,6 @@ rasa run --enable-api --cors "*"
 
 > ⚠️ Usar `"*"` permite acceso desde cualquier dominio, no recomendable en producción.
 
-Para producción:
-```bash
-rasa run --enable-api --cors "https://midominio.com"
-```
-
 ---
 
 ## 📌 Notas finales
