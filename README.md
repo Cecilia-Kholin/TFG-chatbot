@@ -1,85 +1,115 @@
-//////////////////////////////////////////////////////
-///////////// INSALACIONES NECESARIAS ////////////////
-//////////////////////////////////////////////////////
-Node.js
-Python 3.8 o superior, el que se usó para ese proyeco fue 3.9.12
-RASA, el proyecto se realizó con la version 3.6.20
+# 🤖 Proyecto Chatbot Educativo con RASA y React
 
+Este repositorio contiene un asistente conversacional desarrollado con [RASA](https://rasa.com/) y una interfaz web construida con React. El objetivo es enseñar divisiones a niños de forma interactiva.
 
-/////////////////////// DEPENDENCIAS //////////////////////
+---
 
+## 🛠️ Instalaciones necesarias
+
+- **Node.js**
+- **Python 3.8 o superior** (este proyecto utilizó Python 3.9.12)
+- **RASA 3.6.20**
+- **Microsoft Visual C++ Build Tools** (necesario para compilar ciertas librerías en Windows)
+
+---
+
+## 📦 Dependencias
+
+### Node.js:
+```bash
 npm install bootstrap intro.js
-SpacyNLP: 
-    pip install spacy==3.5.4
-    python -m spacy download es_core_news_md
+```
 
+### Python:
+```bash
+pip install spacy==3.5.4
+python -m spacy download es_core_news_md
+```
 
+---
 
-/////////////////////// entrenamiento //////////////////////
-Hace falta entrenar el bot antes de usarlo, no esta subido al repositorio por el tamaño 
+## 🧪 Entrenamiento del bot
 
+> El modelo debe entrenarse antes de usarse. No está incluido en el repositorio debido a su tamaño.
 
-Microsoft Visual C++ Build Tools, que es necesario para compilar partes de esa librería en Windows.
+### Crear y activar entorno virtual
 
-
+**Linux/macOS:**
+```bash
 python3.9 -m venv rasa-env
 source rasa-env/bin/activate
+```
 
-pip3 install -U pip
+**Windows:**
+```bash
+python3.9 -m venv rasa-env
+venv\Scripts\activate
+```
 
-pip3 install rasa
+### Instalar RASA
+```bash
+pip install -U pip
+pip install rasa
+```
 
-entorno virual venv\Scripts\activate
-. //////////////////////////////////////////////////////
-//////////////// ENTRENAR CHATBOT ///////////////////
-//////////////////////////////////////////////////////
+---
 
-///////////// INFO /////////////
+## 📁 Archivos importantes del proyecto
 
- domain.yml : este es el archivo más importante para RASA. Lo llaman como un dominio asistente. Tu bot tiene 2 componentes: NLU y ra. La NLU es lo que el usuario le preguntará al robot. El CORE es lo que el bot responderá 
+- `domain.yml`: Archivo principal de configuración del asistente. Define las intenciones, entidades, acciones y respuestas.
+- `data/nlu.yml`: Datos de entrenamiento para el modelo de comprensión del lenguaje natural (NLU).
+- `data/stories.yml`: Define los posibles caminos de conversación.
+- `data/rules.yml`: Contiene reglas fijas que el bot debe seguir.
+- `credentials.yml`: Configuración para conectar el bot a canales externos como Slack o Facebook.
+- `endpoints.yml`: Define los puntos finales (como el servidor de acciones personalizadas).
+- `actions.py`: Código Python con las acciones personalizadas del bot.
 
- data / stories.md: esto define el flujo de la conversación o puede decir posibles escenarios a los que la conversación puede conducir.
+---
 
- credentials.yml: En este archivo, podemos configurar las credenciales del bot para conectarse a diferentes canales externos, como Facebook o Slack.
+## 💻 Comandos útiles
 
- endpoints.yml: Este archivo se utiliza para especificar los puntos finales a los que se conecta el bot. Por ejemplo, si estás utilizando acciones personalizadas, puedes especificar la URL de tu servidor de acciones aquí.
-
-data/nlu.yml: Este archivo contiene los datos de entrenamiento para el procesamiento del lenguaje natural (NLU) de Rasa. Aquí es donde definimos las intenciones y entidades que el bot debe reconocer.
-
-data/rules.yml: Este archivo contiene reglas que el bot debe seguir. Las reglas son instrucciones específicas que el bot debe cumplir sin ninguna variación.
-
-data/stories.yml: En este archivo, definimos los caminos de conversación y las respuestas del bot en función de las acciones que hemos creado.
-
-///////////// COMANDOS /////////////
+### Entrenar el bot:
+```bash
 rasa train
+```
 
+### Ejecutar acciones personalizadas:
+```bash
 rasa run actions
+rasa run actions --port 5055
+```
 
-Una vez que el modelo ha sido entrenado, podemos probar nuestro bot de Rasa en la línea de comandos. Para iniciar el bot, simplemente ejecuta el siguiente comando:
+### Probar el bot:
+```bash
 rasa shell
-Esto abrirá una interfaz en la línea de comandos donde podrás enviar mensajes al bot y recibir sus respuestas. Puedes probar diferentes mensajes y ver cómo responde el bot.
+rasa shell --debug
+```
 
+---
 
+## 🌐 Integración con React
 
-//////////////////////////////////////////////////////
-///////////// UNIR CHATBOT CON LA PAGINA /////////////
-//////////////////////////////////////////////////////
-
-REACT
+### Crear la aplicación:
+```bash
 npx create-react-app frontend
 cd frontend
 npm start
+```
 
-
+### Ejecutar RASA con la API habilitada:
+```bash
 rasa run --enable-api --cors "*"
-Poner "*" permite acceso desde cualquier dominio, lo cual no es seguro en producción.
+```
+
+> ⚠️ Usar `"*"` permite acceso desde cualquier dominio, no recomendable en producción.
+
+Para producción:
+```bash
 rasa run --enable-api --cors "https://midominio.com"
+```
 
+---
 
-rasa run actions
-rasa run actions --port 5055
-rasa shell --debug
+## 📌 Notas finales
 
-
-MI IP 
-192.168.1.176
+Este proyecto combina procesamiento de lenguaje natural y experiencia interactiva web para facilitar el aprendizaje matemático en edades tempranas.
