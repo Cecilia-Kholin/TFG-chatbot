@@ -19,73 +19,108 @@
         <div class="contenido-inicio">
             <div class="texto-inicio">
                 <h1>DESARROLLO DE UN ENTORNO DE APRENDIZAJE INTERACTIVO CON CHATBOT PARA LA EDUCACIÓN INFANTIL</h1>
-                <p>Este es un chatbot educativo diseñado para ayudar a los niños a aprender divisiones.</p>
+                <p>Este chatbot educativo ha sido desarrollado por María Cecilia Campos Torre como parte de su Trabajo de Fin de Grado (TFG), con el objetivo de facilitar el aprendizaje de las divisiones en niños mediante una experiencia interactiva y accesible.</p>
             </div>
             <img src="multimedia/logos/chatbot.png" alt="chatbot" class="img-chatbot">
         </div>
     </section>
 
     <section id="objetivos">
-        <h2>Objetivos</h2>
-        <ul>
-          <li>Enseñar divisiones a través de teoría y práctica interactiva.</li>
-          <li>Ofrecer una experiencia visual amigable para niños.</li>
-          <li>Adaptar los ejercicios al nivel del usuario.</li>
-        </ul>
+     <h2>Objetivos del proyecto</h2>
+     <div class="objetivos-lista">
+       <div class="objetivo">
+         <h3>Aprendizaje interactivo</h3>
+         <p>Enseñar divisiones combinando teoría y práctica de forma dinámica.</p>
+       </div>
+       <div class="objetivo">
+         <h3>Diseño amigable</h3>
+         <p>Crear una experiencia visual accesible y atractiva para niños.</p>
+       </div>
+       <div class="objetivo">
+         <h3>Ejercicios adaptados</h3>
+         <p>Ajustar automáticamente la dificultad de los ejercicios según el nivel del usuario.</p>
+       </div>
+     </div>
     </section>
+
 
     <section id="tecnologias">
-        <h2>Tecnologías utilizadas</h2>
-        <p>React, Rasa, HTML, CSS, GitHub Pages.</p>
-        <img src="multimedia\logos\HTML5_logo.png" alt="Interfaz de la web" width="100">
-        <img src="multimedia\logos\Rasa_nlu.png" alt="Interfaz de la web" width="250">
-        <img src="multimedia\logos\React_Logo.png" alt="Interfaz de la web" width="100">
-        <img src="multimedia\logos\github-mark-white.png" alt="Interfaz de la web" width="100">
-    </section>
-
-    <section id="capturas">
-        <h2>Demostración visual</h2>
-        <section id="demo">
-            <video width="640" controls>
-                <source src="multimedia\GrabaciónChatbot.mp4" type="video/mp4">
-                Tu navegador no soporta el video.
-            </video>
-        </section>
-    </section>
-
-    <section id="enlaces">
-      <h2>Enlaces</h2>
-
-        <div style="text-align: center;">
-            <div style="display: inline-block; margin: 20px;">
-                <img src="multimedia/logos/logoTFG.png" alt="TFG" width="100"><br>
-                <a href="#inicio">
-                    <button onclick="window.open('multimedia/memoria.pdf', '_blank');">Ir al TFG</button>
-                </a>
-            </div>
-
-        <div style="display: inline-block; margin: 20px;">
-            <img src="multimedia/logos/presentacion.png" alt="Presentación" width="90"><br>
-            <a href="#capturas">
-                <button>Ver presentación</button>
-            </a>
+      <h2>Tecnologías principales utilizadas</h2>
+      <div class="cards-container">
+        <div class="card">
+          <img src="multimedia/logos/React_Logo.png" alt="React">
+          <h3>React</h3>
+          <a href="https://react.dev" target="_blank">Ir al sitio</a>
         </div>
-
-        <div style="display: inline-block; margin: 20px;">
-          <img src="multimedia/logos/repo.png" alt="Repositorio" width="120"><br>
-          <a href="https://github.com/Cecilia-Kholin/TFG-chatbot" target="_blank">
-            <button>Ver en GitHub</button>
-          </a>
+        <div class="card">
+          <img src="multimedia/logos/Rasa_nlu.png" alt="Rasa" class="img-rasa">
+          <h3>Rasa</h3>
+          <a href="https://rasa.com" target="_blank">Ir al sitio</a>
+        </div>
+        <div class="card">
+          <img src="multimedia/logos/github-mark-white.png" alt="GitHub">
+          <h3>GitHub Pages</h3>
+          <a href="https://pages.github.com" target="_blank">Ir al sitio</a>
         </div>
       </div>
     </section>
 
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Autor: María Cecilia Campos Torre</p>
-      <p>Correo: ceciliacampostorre01@gmail.com</p>
+  <section id="capturas">
+      <h2>Demostración visual</h2>
+      <div class="video-demo">
 
+        <div class="video-block">
+          <h3>🎓 Teoría</h3>
+          <video width="100%" controls muted>
+            <source src="multimedia/GrabaciónChatbotTEORIA.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+
+        <div class="video-block">
+          <h3>🧠 Práctica</h3>
+          <video width="100%" controls muted>
+            <source src="multimedia/GrabaciónChatbotEJERCICIOS.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+
+      </div>
+    </section>
+
+   <section id="enlaces">
+      <h2>Enlaces de interés</h2>
+      <div class="enlaces-grid">
+
+        <div class="enlace-card">
+          <img src="multimedia/logos/logoTFG.png" alt="TFG">
+          <h3>Memoria del TFG</h3>
+          <button onclick="window.open('multimedia/memoria.pdf', '_blank');">Ver documento</button>
+        </div>
+
+        <div class="enlace-card">
+          <img src="multimedia/logos/presentacion.png" alt="Presentación">
+          <h3>Presentación</h3>
+          <a href="#capturas"><button>Ver presentación</button></a>
+        </div>
+
+        <div class="enlace-card">
+          <img src="multimedia/logos/repo.png" alt="Repositorio GitHub">
+          <h3>Repositorio GitHub</h3>
+          <a href="https://github.com/Cecilia-Kholin/TFG-chatbot" target="_blank"><button>Ver proyecto</button></a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="contacto">
+      <footer id="contacto">
+          <h2>Contacto</h2>
+          <p><strong>Autora:</strong> María Cecilia Campos Torre</p>
+          <p><strong>Correo:</strong> <a href="mailto:ceciliacampostorre01@gmail.com">ceciliacampostorre01@gmail.com</a></p>
+        </footer>
     </section>
 
 </body>

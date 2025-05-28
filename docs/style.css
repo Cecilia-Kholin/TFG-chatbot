@@ -1,4 +1,4 @@
-body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  color: white;}
+body { font-family: Verdana; margin: 0; padding: 0; background-color: #0B0C1C;  color: white;}
     header {
       background-color: #2D114B;
       padding: 1em;
@@ -21,6 +21,7 @@ body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  co
     background-image: url("multimedia/logos/Purple Futuristic Technology Presentation.png");
     padding: 50px;
 }
+
 .contenido-inicio {
   display: flex;
   align-items: center;
@@ -32,29 +33,107 @@ body { font-family: Arial; margin: 0; padding: 0; background-color: #0B0C1C;  co
     flex: 1;
     min-width: 300px;
     margin-right: 20px;
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     h1{
         color: white;
     }
     p{
         color: white;
+        font-size: 1rem;
     }
 }
 .img-chatbot {
   width: 400px;
   max-width: 100%;
+  opacity: 0.8
+}
+#objetivos {
+  padding: 2rem;
+  background-color: #0B0C1C;
+  color: white;
+  text-align: center;
 }
 
-#contacto {
-  background-color: #2D114B; 
-  padding: 40px;
-  h2{
-    color: white;
-  }
-  p{
-    color: white;
-  }
+.objetivos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
+
+.objetivo {
+  background-color: #1C1D2F;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.objetivo:hover {
+  transform: translateY(-5px);
+}
+
+.objetivo h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.objetivo p {
+  margin: 0;
+}
+#enlaces {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0B0C1C;
+  color: white;
+}
+
+.enlaces-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.enlace-card {
+  background-color: #1C1D2F;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.enlace-card:hover {
+  transform: translateY(-5px);
+}
+
+.enlace-card img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.enlace-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.enlace-card button {
+  background-color: white;
+  color: #0B0C1C;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.enlace-card button:hover {
+  background-color: #ccc;
+}
+
 
 button {
   border: none;
@@ -74,3 +153,107 @@ button:active {
   box-shadow: 0px 0px 0px 0px #a29bfe;
 }
 
+
+#tecnologias {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0B0C1C;
+  color: white;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #1C1D2F;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100px;
+  margin-bottom: 1rem;
+  &.img-rasa {
+    width: 150px;
+    padding-bottom: 20px;
+  }
+}
+
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #0B0C1C;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  background-color: #ccc;
+}
+
+
+#capturas {
+  padding: 2rem;
+  background-color: #0B0C1C;
+  color: white;
+  text-align: center;
+}
+
+.video-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.video-block {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1C1D2F;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.video-block h3 {
+  margin-bottom: 1rem;
+}
+
+
+footer#contacto {
+  background-color: #0B0C1C;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid #1C1D2F;
+}
+
+footer a {
+  color: #FFD700; /* o cualquier color de acento */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
