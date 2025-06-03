@@ -76,7 +76,6 @@ rasa train
 ### Ejecutar acciones personalizadas:
 ```bash
 rasa run actions
-rasa run actions --port 5055
 ```
 
 ### Probar el bot:
